@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/logo1.png" type="image/png">
+    <title>AI Education Platform</title>
+    <link rel="stylesheet" href="firstpage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      /* Add some basic styling for smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      .circle {
+            height: 18px;
+            width: 18px;
+            border-radius: 24px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure the trail is above everything */
+            pointer-events: none; /* Prevent the circles from interfering with mouse events */
+        }
+
+    </style>
+  </head>
+  <body class="light">
+    <header>
+      <a href="index.html" class="logo"><img src="logo1.jpg" alt=""></a>
+      <a href="index.html" class="AI_logo"><img src="img/cabz.png.png" alt=""></a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <ul class="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ride.html">About</a></li>
+          <li><a href="serv.html">Grading Syastem</a></li>
+          <li><a href="about.html">AI Services</a></li>
+          <li><a href="review.html">Reviews</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+      </ul>
+      <div class="header-btn">
+          <a href="login.html" class="sign-up">Login</a>
+      </div>
+      <!-- <div class="theme-switch" id="theme-switch"></div> -->
+  </header>
+  <!-- 20 circle elements -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+    
+    
+    </footer>
+    
+  <script>
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+    
+    // Assign initial positions to the circles
+    circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        // Use pageX and pageY to account for scroll distance
+        coords.x = e.pageX;
+        coords.y = e.pageY;
+    });
+
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+
+            circle.x = x;
+            circle.y = y;
+
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+</script>
+<footer>
+  <div id="topbtn" class="topbtn">
+      <a class="gotopbtn" href="#"><i class="fa-solid fa-angles-up"></i></a>
+  </div>
+
+  <div class="footer-container">
+      <div class="call-us">
+          <p>Questions? call :</p>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+
+<div class="footer-links">
+  <div class="footer-column">
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Services</a></li>
+      </ul>
+  </div>
+  <div class="footer-column">
+      <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Cookies Preferences</a></li>
+          <li><a href="#">Legal Notices</a></li>
+      </ul>
+  </div>
+  <div class="footer-column">
+      <ul>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Pricing</a></li>
+      </ul>
+  </div>
+  <div class="footer-column">
+      <ul>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </div>
+</div>
+</div>
+
+<!-- <p>© 2024 CabRental. All rights reserved. |    Designed and Developed by Sumit Kumar</p> -->
+<p> &copy;
+  <script>document.write(new Date().getFullYear())</script> CabRental. All rights reserved. | Designed and
+  Developed by Sumit Kumar
+</p>
+
+</div>
+
+</footer>
+
+
+
+  </body>
+</html>

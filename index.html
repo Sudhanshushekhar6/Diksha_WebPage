@@ -1,0 +1,1019 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo1.png" type="image/png">
+    <title>AI education platform</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Contact us/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        /* Base styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #eeeff1;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .circle {
+            height: 18px;
+            width: 18px;
+            border-radius: 24px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure the trail is above everything */
+            pointer-events: none; /* Prevent the circles from interfering with mouse events */
+        }
+        .logo img {
+            height: 40px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
+            list-style: none;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .navbar li a:hover {
+            color: #007bff;
+        }
+
+        .header-btn .sign-up {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .header-btn .sign-up:hover {
+            background-color: red;
+            border-color: red;
+        }
+
+        /* Hide menu icon initially */
+        #menu-icon {
+            display: none;
+        }
+
+        /* Responsive styles for mobile sidebar */
+        @media (max-width: 600px) {
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: -250px;
+                width: 250px;
+                height: 100%;
+                flex-direction: column;
+                align-items: start;
+                justify-content: flex-start;
+                padding: 20px;
+                transition: 0.3s;
+                z-index: 1000;
+            }
+
+            .navbar.active {
+                left: 0;
+            }
+
+            .navbar li {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .navbar li a {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 10px 15px;
+            }
+
+            #menu-icon {
+                display: block;
+                font-size: 28px;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+            }
+
+            .close-btn {
+                font-size: 28px;
+                cursor: pointer;
+                margin-left: auto;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            #myimg {
+                display: none;
+            }
+        }
+
+        /* General styles */
+        .review {
+            padding: 50px 0;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+      /* Main Swiper Slide Styling */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.swiper-slide h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.swiper-slide p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.stars i {
+    color: #fbc02d;
+}
+
+/* Hover effect */
+.swiper-slide:hover {
+    transform: scale(.95);
+}
+
+/* Responsive Styles */
+/* Medium Devices (Up to 1200px) */
+@media screen and (max-width: 1200px) {
+    .swiper-slide {
+        max-width: 100%;
+        padding: 16px;
+    }
+}
+
+/* Small Devices (Up to 768px) */
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .swiper-slide {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .swiper-slide img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .swiper-slide h3 {
+        font-size: 1.2rem;
+        margin: 8px 0;
+    }
+
+    .swiper-slide p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}
+
+/* Extra Small Devices (Up to 576px) */
+@media screen and (max-width: 576px) {
+    .heading {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .swiper-slide {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .swiper-slide img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .swiper-slide h3 {
+        font-size: 1rem;
+        margin: 8px 0;
+    }
+
+    .swiper-slide p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Ultra Small Devices (Up to 400px) */
+@media screen and (max-width: 400px) {
+    .heading {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .swiper-slide {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .swiper-slide img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .swiper-slide h3 {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    .swiper-slide p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Additional styling for swiper pagination */
+.swiper-pagination {
+    position: relative;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Additional responsive pagination size adjustments */
+@media screen and (max-width: 768px) {
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+        /* Navigation button styles */
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            color: var(--primary-color);
+            padding: 30px;
+            width: 25px;
+            height: 25px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease, opacity 0.3s ease;
+        }
+
+        .swiper-button-prev {
+            left: 20px;
+        }
+
+        .swiper-button-next {
+            right: 20px;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+
+        }
+
+
+
+        /* General Styles */
+        .container_1 {
+            padding: 50px 0;
+        }
+
+        .Question h3 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+        }
+
+        .accordion__wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .accordion__title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .accordion__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .accordion__question {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .accordion__icon {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .accordion__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+        }
+
+        .accordion__content p {
+            padding: 15px 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Expand accordion on active */
+        .accordion.active .accordion__content {
+            max-height: 200px;
+            transition: max-height 0.4s ease-in;
+        }
+
+        .accordion.active .accordion__icon i {
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .accordion__title {
+                font-size: 1.6rem;
+            }
+
+            .accordion__question {
+                font-size: 1.1rem;
+            }
+
+            .accordion__icon {
+                font-size: 1.3rem;
+            }
+
+            .accordion__content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .accordion__wrapper {
+                padding: 10px;
+            }
+
+            .accordion__title {
+                font-size: 1.4rem;
+            }
+
+            .accordion__question {
+                font-size: 1rem;
+            }
+
+            .accordion__icon {
+                font-size: 1.2rem;
+            }
+
+            .accordion__content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* General Styles */
+        #contact {
+            padding:  50px 0;
+            margin-top: -9rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 13rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .contact-left{
+            margin-top: 130px;
+        }
+
+        .contact-left,
+        .contact-right {
+            flex: 1;
+            min-width: 300px;
+           
+        }
+
+        .line {
+            border: none;
+            height: 1px;
+            background-color: #333; 
+            margin: 20px 0;
+            width: 100%; 
+        }
+
+        .contact-left .line {
+            width: 70%;
+            margin: 20px auto; /* Center the line */
+        }
+
+        .contact-left p{
+            margin-bottom: 60px;
+        }
+
+        .sub-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .social-icon a {
+            margin-right: 15px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .social-icon a:hover {
+            color: #007bff;
+        }
+
+        /*Form styling*/
+        .contact-right {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .contact-right h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff !important;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0567d0 !important;
+            color: #fff;
+        }
+
+        #msg {
+            margin-top: 15px;
+            color: green;
+            font-size: 1rem;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .contact-left,
+            .contact-right {
+                    margin: 20px 0;
+                    margin-left: -7rem;
+            }
+
+            .sub-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .social-icon {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .sub-title {
+                font-size: 1.6rem;
+            }
+
+            form input,
+            form textarea {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            form button {
+                font-size: 0.9rem;
+            }
+        }
+                    /* General Container Styling */
+            /* General Container Styling */
+.home .container {
+    position: relative; /* To position the text overlay relative to the container */
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Text Overlay Styling */
+.text-overlay {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 40%; /* Adjust width of the text block */
+    transform: translateY(-20%);
+    color: #333; /* Adjust text color to fit the background */
+}
+
+.text-overlay h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e63946; /* Optional color for the header */
+}
+
+.text-overlay p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+    .text-overlay {
+        width: 90%; /* Wider text block for smaller screens */
+        left: 5%;
+        top: 30%; /* Adjust the positioning for mobile */
+    }
+
+    .text-overlay h2 {
+        font-size: 28px;
+    }
+
+    .text-overlay p {
+        font-size: 16px;
+    }
+    
+}
+            
+        </style>
+    </head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo"><img src="logo1.jpg" alt=""></a>
+        <a href="index.html" class="CabRental_logo"><img src="img/cabz.png.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ride.html">About</a></li>
+            <li><a href="serv.html">Grading systems</a></li>
+            <li><a href="about.html">AI Services</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="header-btn">
+            <a href="login.html" class="sign-up">Login</a>
+        </div>
+        
+    </header>
+
+    
+        
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+
+
+        <div class="booking-form">
+            
+                    
+           
+        </div>
+
+    
+
+    <section>
+        <div class="Question">
+            <h3>Frequently Asked Questions</h3>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Is there a refund policy for courses?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                        
+                            <br><br>
+                            yes, we have a refund policy in place. If you are not satisfied with a course, you can request a refund within the first 7 days of enrollment, provided you haven’t completed more than 20% of the course content. Certain conditions may apply for special programs or bundled packages. Please refer to our refund policy page for detailed information. 
+                            <br>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            What payment methods are accepted?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                           
+                            <br><br>
+                            1. Credit and Debit Cards (Visa, Mastercard, etc.).
+                            <br>
+                            2. Net Banking.
+                            <br>
+                            3. UPI and Mobile Wallets.
+                            <br>
+                            4. Payment Gateways (PayPal, Stripe, etc).
+                            
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            What types of courses are available on the platform?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            The cost of renting a car depends on several factors, including.
+                            <br><br>
+                            1. Technology (Programming, AI/ML, Cloud Computing).
+                            <br>
+                            2. Personal Development (Leadership, Communication Skills).
+                            <br>
+                            3. Language Learning.
+                            <br>
+                            4. Academic Subjects (Math, Science, History).
+                            <br>
+                            5. Business and Management.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour" aria-expanded="false"
+                            aria-controls="flush-collapseFour">
+                            How do i contact the customer support?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            You can contact our customer support team through the following methods:
+                            <br><br>
+                            Phone: Call our 24/7 customer service hotline at [9570455641].
+                            <br>
+                            Email: Reach us at [abc@gmail.com] for any queries or support.
+                            <br>
+                            Live Chat: Visit our website and use the live chat feature to get immediate assistance from
+                            a representative.
+                            <br>
+                            Mobile App: If you have our app, you can use the "Help" or "Support" section to chat with
+                            our support team.
+                            <br>
+                            Social Media: You can also contact us through our official social media channels on
+                            platforms like Facebook, Twitter, or Instagram.
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive" aria-expanded="false"
+                            aria-controls="flush-collapseFive">
+                            What certifications will I receive after completing a course?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">After completing a course, you will receive a verified digital certificate of completion. For certain professional courses, we also provide industry-recognized certifications, which can be shared on your LinkedIn profile and included in your resume.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+        
+
+
+        <footer>
+            <div id="topbtn" class="topbtn">
+                <a class="gotopbtn" href="#"><i class="fa-solid fa-angles-up"></i></a>
+            </div>
+
+            <div class="footer-container">
+                <div class="call-us">
+                    <p>Questions? Call 000-080-000-000</p>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Cookies Preferences</a></li>
+                    <li><a href="#">Legal Notices</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+
+        <!-- <p>© 2024 CabRental. All rights reserved. |    Designed and Developed by Sumit Kumar</p> -->
+        <p> &copy;
+            <script>document.write(new Date().getFullYear())</script> AI Education Platform. All rights reserved. 
+           
+        </p>
+
+        </div>
+
+        </footer>
+
+
+        <!-- Link to JS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script src="main.js"></script>
+        <script src="script.js"></script>
+        <script>
+            const topButton = document.getElementById("topbtn");
+            window.onscroll = function () {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            };
+            topButton.onclick = function (event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
+        </script>
+       <script>
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        
+        // Assign initial positions to the circles
+        circles.forEach(function (circle) {
+            circle.x = 0;
+            circle.y = 0;
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            // Use pageX and pageY to account for scroll distance
+            coords.x = e.pageX;
+            coords.y = e.pageY;
+        });
+
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+    </script>   
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "2zn6LCEiOl1sZnaTGnPqp",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="2zn6LCEiOl1sZnaTGnPqp"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+    
+
+
+</body>
+
+
+
+</html>
